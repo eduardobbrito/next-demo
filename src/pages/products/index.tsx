@@ -1,10 +1,11 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import StyledLink from 'src/components/StyledLink'
 import api from 'src/services/api'
 
 
-export default function Home({ productsData }) {
+export default function Products({ productsData }) {
   return (
     <>
       <Head>
@@ -16,7 +17,11 @@ export default function Home({ productsData }) {
       </StyledLink>
       <ul>
         {productsData.map(prod => (
-          <li>{prod.name}</li>
+          <li key={prod.id}>
+            <Link href={`products/${prod.slug}`}>
+              <a>{prod.name}</a>
+            </Link>
+          </li>
         ))}
       </ul>
     </>
@@ -27,7 +32,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const products = await api
     .get('catalog_system/pub/products/search?fq=C:2000094/4005284')
     .then(res => res.data)
-  // console.log(products)
   const productsData = products.map(prod => {
     const params = {
       id: prod.productId,

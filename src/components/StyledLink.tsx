@@ -16,7 +16,6 @@ const StyledLink = (props) => {
   // this example is here to illustrate the as prop from styled-components
   // https://styled-components.com/docs/api#as-polymorphic-prop
   const { as, children, href } = props;
-  console.log(props)
 
   // warning from vercel
   // When wrapping a Link from next/link within a styled-component,
