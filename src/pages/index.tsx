@@ -2,6 +2,8 @@
 import Head from 'next/head'
 import styled from 'styled-components'
 
+import StyledLink from 'src/components/StyledLink'
+
 const Title = styled.h1` // var must begin with uppercase
   color: var(--zeenow-blue);
   span {
@@ -17,6 +19,9 @@ export default function Home() {
         <title>Next Demo | Home</title>
       </Head>
       <Title>Hello World with TS!<span>Com styled-components</span></Title>
+      <StyledLink href="/products" forwardedAs="/products">
+        Produtos
+      </StyledLink>
     </>
   )
 }

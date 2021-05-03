@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
 
-          <title>Next Demo</title>
+          {/* <title>Next Demo</title> */}
         </Head>
         <body>
           <Main />
