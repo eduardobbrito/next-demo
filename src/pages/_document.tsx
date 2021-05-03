@@ -1,6 +1,7 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
+// https://github.com/vercel/next.js/blob/master/examples/with-styled-components/pages/index.js
 // https://dev.to/adambaialiev/how-to-add-styled-components-to-next-js-project-using-typescript-2nl4
 // styled-components ssr and guide to theming
 

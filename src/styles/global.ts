@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle` // uppercase, will be a React comp
 
   body {
     background-color: var(--background);
-    color: var(--white)
+    color: var(--white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: auto;
   }

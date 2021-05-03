@@ -12,6 +12,13 @@ const Title = styled.h1` // var must begin with uppercase
   }
 `
 
+const LinksContainer = styled.div`
+  display: flex;
+  justify-content; center;
+  align-items: center;
+  flex-direction: column;
+`
+
 export default function Home() {
   return (
     <>
@@ -19,9 +26,14 @@ export default function Home() {
         <title>Next Demo | Home</title>
       </Head>
       <Title>Hello World with TS!<span>Com styled-components</span></Title>
-      <StyledLink href="/products" forwardedAs="/products">
-        Produtos
-      </StyledLink>
+      <LinksContainer>
+        <StyledLink href="/products" forwardedAs="/products">
+          Produtos
+        </StyledLink>
+        <StyledLink href="/ssr-example" forwardedAs="/ssr-example">
+          SSR Example
+        </StyledLink>
+      </LinksContainer>
     </>
   )
 }
