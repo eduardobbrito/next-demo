@@ -5,6 +5,8 @@ const GlobalStyles = createGlobalStyle` // uppercase, will be a React comp
     --background: #333;
     --white: #fff;
     --black: #000;
+    --zeedog-green: #33d2c8;
+    --zeenow-blue: #2fd6ee;
   }
 
   * {

@@ -3,9 +3,9 @@ import Head from 'next/head'
 import styled from 'styled-components'
 
 const Title = styled.h1` // var must begin with uppercase
-  color: red; // install vscode-styled-components by Julien Poissonnier
+  color: var(--zeenow-blue);
   span {
-    color: green;
+    color: var(--zeedog-green); // install vscode-styled-components by Julien Poissonnier
     display: block;
   }
 `
