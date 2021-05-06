@@ -1,5 +1,11 @@
-const buildCodeArray = productRegisteredArray => {
-  if (productRegisteredArray === undefined) return false;
+interface ImagesArrayItemProps {
+  altImagem: string,
+  urlImagem: string,
+  urlVideo: string
+}
+
+const buildCodeArray = (productRegisteredArray: string): Array<ImagesArrayItemProps> => {
+  // if (productRegisteredArray === undefined) return false;
   const dataObjectsArray = [];
   const reponseTextArray = productRegisteredArray.trim().split(';');
   reponseTextArray.forEach(responseItem => {
