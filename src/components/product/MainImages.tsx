@@ -15,8 +15,12 @@ const ImagesContainer = styled.section`
     ". .";
 `
 
+interface MainImageProps {
+  mainImages: string
+}
+
 const MainImages = ({ mainImages }) => {
-  const imagesArray = buildCodeArray(mainImages)
+  const imagesArray:[] = buildCodeArray(mainImages)
   return (
     <ImagesContainer className="flex">
       {imagesArray.map(img =>

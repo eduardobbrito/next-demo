@@ -60,7 +60,8 @@ Next é um framework criado a partir do react, lançado em 2016 por Guillermo Ra
 
 const Presentation = () => {
   return (
-    <Markdown children={md}>
+    <Markdown>
+      {md}
     </Markdown>
   )
 }

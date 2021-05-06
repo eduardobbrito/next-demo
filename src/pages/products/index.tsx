@@ -12,10 +12,7 @@ export default function Products({ productsData, timeStamp }) {
         <title>Next Demo | Produtos</title>
       </Head>
       <h1>Produtos</h1>
-      <h2>Renderizado às: {timeStamp}</h2>
-      <StyledLink href="/" forwardedAs="/">
-        Home
-      </StyledLink>
+      <p>Renderizado às: {timeStamp}</p>
       <ul>
         {productsData.map(prod => (
           <li key={prod.id}>

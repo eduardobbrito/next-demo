@@ -13,7 +13,14 @@ const CustomLink = styled.a`
   }
 `
 
-const StyledLink = ({ as, children, href, activeClassName, ...rest }) => {
+interface StyledLinkProps extends LinkProps {
+  forwardedAs: string,
+  children: any,
+  href: string,
+  activeClassName: string,
+}
+
+const StyledLink = ({ forwardedAs, children, href, activeClassName }: StyledLinkProps) => {
   // this example is here to illustrate the as prop from styled-components
   // https://styled-components.com/docs/api#as-polymorphic-prop
 
@@ -29,7 +36,7 @@ const StyledLink = ({ as, children, href, activeClassName, ...rest }) => {
   // forwardedAs prop from styled-components or use a different
   // named prop to pass to a styled Link.
   return (
-    <Link href={href} as={as} passHref>
+    <Link href={href} as={forwardedAs} passHref>
       <CustomLink className={className}>{children}</CustomLink>
     </Link>
   )
