@@ -14,7 +14,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const productData = await api
     .get('catalog_system/pub/products/variations/5006212')
     .then(res => res.data)
-  console.log(productData);
   return {
     props: {
       productData

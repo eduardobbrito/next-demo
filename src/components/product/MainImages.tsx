@@ -30,7 +30,6 @@ interface ImagesArrayProps extends Array<ImagesArrayItemProps>{}
 const MainImages = ({ mainImages }) => {
   if (mainImages === undefined) return
   const imagesArray: ImagesArrayProps = buildCodeArray(mainImages)
-  console.log(imagesArray[0], imagesArray)
   return (
     <ImagesContainer className="flex">
       {imagesArray.map(img =>

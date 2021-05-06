@@ -40,7 +40,6 @@ export const getStaticProps: GetStaticProps = async () => {
     return params
   })
   const timeStamp = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'full', timeStyle: 'long' }).format(new Date())
-  console.log(timeStamp)
   return {
     props: {
       productsData,
