@@ -5,13 +5,14 @@ import StyledLink from 'src/components/StyledLink'
 import api from 'src/services/api'
 
 
-export default function Products({ productsData }) {
+export default function Products({ productsData, timeStamp }) {
   return (
     <>
       <Head>
-        <title>Next Demo | Products</title>
+        <title>Next Demo | Produtos</title>
       </Head>
-      <h1>Products</h1>
+      <h1>Produtos</h1>
+      <h2>Renderizado às: {timeStamp}</h2>
       <StyledLink href="/" forwardedAs="/">
         Home
       </StyledLink>
@@ -41,10 +42,13 @@ export const getStaticProps: GetStaticProps = async () => {
     }
     return params
   })
+  const timeStamp = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'full', timeStyle: 'long' }).format(new Date())
+  console.log(timeStamp)
   return {
     props: {
-      productsData
+      productsData,
+      timeStamp
     },
-    // revalidate: 60 * 60 * 24,
+    revalidate: 60 * 60 * 24, // 1day
   }
 }

@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import Link, { LinkProps } from 'next/link'
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 
 const CustomLink = styled.a`
@@ -12,10 +13,13 @@ const CustomLink = styled.a`
   }
 `
 
-const StyledLink = (props) => {
+const StyledLink = ({ as, children, href, activeClassName, ...rest }) => {
   // this example is here to illustrate the as prop from styled-components
   // https://styled-components.com/docs/api#as-polymorphic-prop
-  const { as, children, href } = props;
+
+  const { asPath } = useRouter()
+
+  const className = asPath === href ? activeClassName : ''
 
   // warning from vercel
   // When wrapping a Link from next/link within a styled-component,
@@ -26,7 +30,7 @@ const StyledLink = (props) => {
   // named prop to pass to a styled Link.
   return (
     <Link href={href} as={as} passHref>
-      <CustomLink>{children}</CustomLink>
+      <CustomLink className={className}>{children}</CustomLink>
     </Link>
   )
 }

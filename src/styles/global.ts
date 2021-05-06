@@ -31,6 +31,7 @@ const GlobalStyles = createGlobalStyle` // uppercase, will be a React comp
     color: var(--white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: auto;
+    margin: 1rem;
   }
 
   body, input, textarea, select, button {
@@ -52,6 +53,17 @@ const GlobalStyles = createGlobalStyle` // uppercase, will be a React comp
   [disable] {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+
+  /* how to import another file into here */
+  .flex {
+    display: flex;
+    &.justify-center {
+      justify-content: center;
+    }
+    &.align-items-center {
+      align-items: center;
+    }
   }
 `
 
