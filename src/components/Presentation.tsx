@@ -1,4 +1,6 @@
 import Markdown from 'markdown-to-jsx'
+import styled from 'styled-components'
+import CodeBlock from 'src/components/CodeBlock'
 
 const md = `
 # O que é e porque usar o Next\n
@@ -58,11 +60,38 @@ Next é um framework criado a partir do react, lançado em 2016 por Guillermo Ra
 - SEO\n
 `
 
+const MarkdownContainer = styled.article`
+  border-top: 1px solid;
+  h1, h2, p {
+    margin-bottom: .75rem;
+  }
+  h1 {
+    margin-top: 2rem;
+  }
+  ul {
+    margin-left: 1rem;
+  }
+`
+
+const code = `const Presentation = () => {
+  return (
+    <MarkdownContainer>
+      <CodeBlock  />
+      <Markdown>
+        {md}
+      </Markdown>
+    </MarkdownContainer>
+  )
+}`
+
 const Presentation = () => {
   return (
-    <Markdown>
-      {md}
-    </Markdown>
+    <MarkdownContainer>
+      <CodeBlock code={code} language={'jsx'} />
+      <Markdown>
+        {md}
+      </Markdown>
+    </MarkdownContainer>
   )
 }
 

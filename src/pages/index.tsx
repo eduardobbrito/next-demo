@@ -4,9 +4,11 @@ import styled from 'styled-components'
 import Presentation from 'src/components/Presentation'
 
 const Title = styled.h1` // var must begin with uppercase
-  color: var(--zeenow-blue);
+  color: var(--zeedog-green);   // install vscode-styled-components extension
+  text-align: center;
+  margin: 2rem 0;
   span {
-    color: var(--zeedog-green);   // install vscode-styled-components extension
+    color: var(--zeenow-blue);
     display: block;               // by Julien Poissonnier
   }
 `
@@ -24,7 +26,7 @@ export default function Home() {
       <Head>
         <title>Next Demo | Home</title>
       </Head>
-      <Title>Hello World with TS!<span>Com styled-components</span></Title>
+      <Title>next.js<span>com styled-components e Typescript</span></Title>
       <Presentation />
     </>
   )
