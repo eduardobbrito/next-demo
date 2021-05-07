@@ -2,6 +2,7 @@
 import api from 'src/services/api'
 import MainImages from 'src/components/product/MainImages'
 import Description from 'src/components/product/Description'
+import timeStampValue from 'src/services/timeStamp'
 
 // const ProductMainContainer = styled.div`
 
@@ -45,7 +46,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async (context) => {
-  const timeStamp = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'full', timeStyle: 'long' }).format(new Date())
+  const timeStamp = timeStampValue
   const { slug } = context.params;
   const productData = await api
     .get(`catalog_system/pub/products/search/${slug}/p`)

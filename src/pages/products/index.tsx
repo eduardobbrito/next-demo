@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import CodeBlock from 'src/components/CodeBlock'
 import StyledLink from 'src/components/StyledLink'
 import api from 'src/services/api'
+import timeStampValue from 'src/services/timeStamp'
 
 const codeGetStaticProps =
 `export const getStaticProps: GetStaticProps = async () => {
@@ -71,7 +72,6 @@ const ProductsContainer = styled.div`
 `
 
 export default function Products({ productsData, timeStamp }) {
-  console.log(timeStamp)
   return (
     <>
       <Head>
@@ -111,7 +111,7 @@ export const getStaticProps: GetStaticProps = async () => {
     }
     return params
   })
-  const timeStamp = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'full', timeStyle: 'long', timeZone: 'America/Araguaina' }).format(new Date())
+  const timeStamp = timeStampValue;
   return {
     props: {
       productsData,
