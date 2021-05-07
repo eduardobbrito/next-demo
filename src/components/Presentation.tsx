@@ -61,7 +61,6 @@ Next é um framework criado a partir do react, lançado em 2016 por Guillermo Ra
 `
 
 const MarkdownContainer = styled.article`
-  border-top: 1px solid;
   h1, h2, p {
     margin-bottom: .75rem;
   }
@@ -73,21 +72,24 @@ const MarkdownContainer = styled.article`
   }
 `
 
-const code = `const Presentation = () => {
+const code =
+`export default function Home() {
   return (
-    <MarkdownContainer>
-      <CodeBlock  />
-      <Markdown>
-        {md}
-      </Markdown>
-    </MarkdownContainer>
+    <>
+      <Head>
+        <title>Next Demo | Home</title>
+      </Head>
+      <Title>next.js<span>com styled-components e Typescript</span></Title>
+      <Presentation />
+    </>
   )
-}`
+}
+`
 
 const Presentation = () => {
   return (
     <MarkdownContainer>
-      <CodeBlock code={code} language={'jsx'} />
+      <CodeBlock code={code} language={'jsx'} highlight="8" />
       <Markdown>
         {md}
       </Markdown>
